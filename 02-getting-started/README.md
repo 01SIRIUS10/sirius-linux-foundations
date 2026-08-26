@@ -17,7 +17,7 @@ In large enterprise environments, servers **do not** have a graphical interface 
 The prompt usually looks something like this:
 SIRIUS@hostname:~$
 
-text
+ 
 
 
 Let's break down every single piece of it:
