@@ -40,17 +40,17 @@ Structured notes from TCM Security's **Linux 101** course.
 
 | #   | Module                                              | Status         |
 | --- | --------------------------------------------------- | -------------- |
-| 01  | [Introduction](./01-introduction)                   | 🔴 Not Started |
-| 02  | [Getting Started](./02-getting-started)             | 🔴 Not Started |
-| 03  | [Files & the Filesystem](./03-files-and-filesystem) | 🔴 Not Started |
-| 04  | [Users & Groups](./04-users-and-groups)             | 🔴 Not Started |
-| 05  | [Installing Software](./05-installing-software)     | 🔴 Not Started |
-| 06  | [Shells](./06-shells)                               | 🔴 Not Started |
-| 07  | [More Utilities](./07-more-utilities)               | 🔴 Not Started |
-| 08  | [Text Editors](./08-text-editors)                   | 🔴 Not Started |
-| 09  | [Process Management](./09-process-management)       | 🔴 Not Started |
-| 10  | [Regular Expressions](./10-regular-expressions)     | 🔴 Not Started |
-| 11  | [Scripting](./11-scripting)                         | 🔴 Not Started |
+| 01  | [Introduction](./01-introduction)                   | 🟢 Completed   |
+| 02  | [Getting Started](./02-getting-started)             | 🟢 Completed   |
+| 03  | [Files & the Filesystem](./03-files-and-filesystem) | 🟢 Completed   |
+| 04  | [Users & Groups](./04-users-and-groups)             | 🟢 Completed   |
+| 05  | [Installing Software](./05-installing-software)     | 🟢 Completed   |
+| 06  | [Shells](./06-shells)                               | 🟢 Completed   |
+| 07  | [More Utilities](./07-more-utilities)               | 🟢 Completed   |
+| 08  | [Text Editors](./08-text-editors)                   | 🟢 Completed   |
+| 09  | [Process Management](./09-process-management)       | 🟢 Completed   |
+| 10  | [Regular Expressions](./10-regular-expressions)     | 🟢 Completed   |
+| 11  | [Scripting](./11-scripting)                         | 🟢 Completed   |
 
 ---
 
@@ -84,5 +84,3 @@ Each phase gets its own dedicated, documented repo. This is stop #2.
 ## 👤 Author
 
 **Nada** — CS student · Aspiring Web App Pentester → AI Red Teamer
-
- 
