@@ -17,7 +17,7 @@ Rule I followed: only man, --help, ExplainShell, and trial and error.
 
 | Level | Concept Tested | Status | Write-up |
 | :---: | :--- | :---: | :---: |
-| **00 &rarr; 01** | SSH connection basics, reading files with `cat` | 🔴 | [View Write-up](./Level_00.md) |
+| **00 &rarr; 01** | SSH connection basics  | 🟢 | [View Write-up](./Level_00.md) |
 | **01 &rarr; 02** | Handling a filename that looks like a flag (`-`) | 🔴 | [View Write-up](./Level_01.md) |
 | **02 &rarr; 03** | Filenames containing spaces | 🔴 | [View Write-up](./Level_02.md) |
 | **03 &rarr; 04** | Finding hidden files (`ls -a`) | 🔴 | [View Write-up](./Level_03.md) |
