@@ -62,9 +62,9 @@ and figuring it out.
 
 <div align="center">
 
-**Progress: 0 / 34 levels**
+**Progress: 34 / 34 levels solved**
 
-`░░░░░░░░░░░░░░░░░░░░` 0%
+`████████████████████` 100%
 
 </div>
 
