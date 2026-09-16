@@ -6,7 +6,7 @@
 
 _Documented as I learned it — not as I was taught it._
 
-![Status](https://img.shields.io/badge/status-in_progress-yellow?style=flat-square)
+![Status](https://img.shields.io/badge/status-Completed-brightgreen?style=flat-square)
 ![Focus](https://img.shields.io/badge/focus-Cybersecurity-critical?style=flat-square)
 ![Path](https://img.shields.io/badge/path-Web_App_Pentesting-blue?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)
