@@ -49,7 +49,7 @@ Now, it serves as my active lab notebook for **Linux Local Privilege Escalation*
 | # | Vector | Key Concepts & Mechanics | Status | Write-up |
 | :--: | :-- | :-- | :-- | :--: |
 | 01 | Manual Enumeration | Host & privilege profiling (`id`, `uname -a`, `/etc/issue`, `ps`, `find`) | ✅ Done |[Read →](./03-privilege-escalation/01-manual-enumeration.md) |
-| 02 | Automated Recon | Scripted enumeration (`LinPEAS`, `LinEnum`, `Linux Exploit Suggester`) | ✅ Done | — |
+| 02 | Automated Recon | Scripted enumeration (`LinPEAS`, `LinEnum`, `Linux Exploit Suggester`) | ✅ Done | [Read →](./03-privilege-escalation/02-automated-recon.md) |
 | 03 | Kernel Exploits | `CVE-2015-1328` (`OverlayFS` namespace flaw, `gcc`, `ld.so.preload`) | ✅ Done | [Read →](./03-privilege-escalation/01-kernel-exploits-cve-2015-1328.md) |
 | 04 | Sudo Abuse | Abusing `sudo -l`, `GTFOBins`, and `LD_PRELOAD` environment hijacking | 🔄 In Progress | — |
 | 05 | SUID Binaries | `find -perm -4000`, abusing custom SUIDs, Shared Object Injection | ⬜ Up Next | — |
