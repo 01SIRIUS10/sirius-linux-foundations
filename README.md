@@ -28,15 +28,15 @@ This is my personal documentation for mastering Linux. I started with the basics
 
 ## 🚀 Privilege Escalation Labs
 Detailed walk-throughs for different privilege escalation vectors. 
-**Active sprint: 3 / 10 labs completed**
+**Active sprint: 4 / 10 labs completed**
 
 | # | Vector | Core Concept / Tools | Status | Documentation |
 |:--|:---|:---|:---|:---|
 | 01 | Manual Enumeration | `hostname`, `uname -a`, `id`, `ss -tulnp`, `SUID` | ✅ Done | [Read →](./03-privilege-escalation/01-manual-enumeration.md) |
 | 02 | Automated Recon | `LinPEAS`, `LinEnum`, `LES` | ✅ Done | [Read →](./03-privilege-escalation/02-automated-recon.md) |
 | 03 | Kernel Exploits | `CVE-2015-1328` (`OverlayFS`, `gcc`, `ld.so.preload`) | ✅ Done | [Read →](./03-privilege-escalation/03-kernel-exploits-cve-2015-1328.md) |
-| 04 | Sudo Abuse | `sudo -l`, `GTFOBins`, `LD_PRELOAD` | ⬜ Up Next | — |
-| 05 | SUID Binaries | `find / -perm -4000`, Shared Object Injection | ⬜ Queued | — |
+| 04 | Sudo Abuse | `sudo -l`, `GTFOBins`, `LD_PRELOAD`, `-exec /bin/sh -p` | ✅ Done | [Read →](./03-privilege-escalation/04-sudo-abuse.md) |
+| 05 | SUID Binaries | `find / -perm -4000`, Shared Object Injection | ⬜ Up Next | — |
 | 06 | Capabilities | `getcap -r /`, `cap_setuid+ep` | ⬜ Queued | — |
 | 07 | Cron Jobs | Writable Scripts, Wildcards, Path Injection | ⬜ Queued | — |
 | 08 | NFS | `no_root_squash` | ⬜ Queued | — |
