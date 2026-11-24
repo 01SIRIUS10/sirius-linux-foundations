@@ -28,7 +28,7 @@ This is my personal documentation for mastering Linux. I started with the basics
 
 ## 🚀 Privilege Escalation Labs
 Detailed walk-throughs for different privilege escalation vectors. 
-**Active sprint: 4 / 10 labs completed**
+**Active sprint: 6 / 10 labs completed**
 
 | # | Vector | Core Concept / Tools | Status | Documentation |
 |:--|:---|:---|:---|:---|
@@ -36,9 +36,9 @@ Detailed walk-throughs for different privilege escalation vectors.
 | 02 | Automated Recon | `LinPEAS`, `LinEnum`, `LES` | ✅ Done | [Read →](./03-privilege-escalation/02-automated-recon.md) |
 | 03 | Kernel Exploits | `CVE-2015-1328` (`OverlayFS`, `gcc`, `ld.so.preload`) | ✅ Done | [Read →](./03-privilege-escalation/03-kernel-exploits-cve-2015-1328.md) |
 | 04 | Sudo Abuse | `sudo -l`, `GTFOBins`, `LD_PRELOAD`, `-exec /bin/sh -p` | ✅ Done | [Read →](./03-privilege-escalation/04-sudo-abuse.md) |
-| 05 | SUID Binaries | `find / -perm -4000`, Shared Object Injection | ⬜ Up Next | — |
-| 06 | Capabilities | `getcap -r /`, `cap_setuid+ep` | ⬜ Queued | — |
-| 07 | Cron Jobs | Writable Scripts, Wildcards, Path Injection | ⬜ Queued | — |
+| 05 | SUID Binaries | `find / -perm -4000`, Arbitrary Read, `John the Ripper` | ✅ Done | [Read →](./03-privilege-escalation/05-suid-binaries.md) |
+| 06 | Capabilities | `getcap -r /`, `cap_setuid+ep`, Python runtime escape | ✅ Done | [Read →](./03-privilege-escalation/06-capabilities.md) |
+| 07 | Cron Jobs | Writable Scripts, Wildcards, Path Injection | ⬜ Up Next | — |
 | 08 | NFS | `no_root_squash` | ⬜ Queued | — |
 | 09 | Password Mining | `.bash_history`, `config.php`, SSH Keys | ⬜ Queued | — |
 | 10 | Software Abuse | `Docker`, `Screen`, `LXD` | ⬜ Planned | — |
