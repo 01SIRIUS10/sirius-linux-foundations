@@ -12,13 +12,13 @@ A methodical repository documenting enterprise-grade Linux privilege escalation 
 
 | # | Attack Vector | Severity | Core Mechanics & Primitives | Status | Lab Documentation |
 | :-: | :--- | :-: | :--- | :-: | :--- |
-| `01` | **Manual Enumeration** | `Info` | Environment triage, user mapping, network sockets, unquoted path analysis | `Completed` | [01-manual-enumeration.md](01-manual-enumeration.md) |
-| `02` | **Automated Reconnaissance** | `Info` | LinPEAS, LinEnum, session artifact inspection, false-positive elimination | `Completed` | [02-automated-recon.md](02-automated-recon.md) |
-| `03` | **Kernel Exploits** | `Critical` | CVE-2015-1328 (OverlayFS), dirty copy-on-write, kernel memory corruptions | `Completed` | [03-kernel-exploits-cve-2015-1328.md](03-kernel-exploits-cve-2015-1328.md) |
-| `04` | **Sudo Rights Abuse** | `High` | `NOPASSWD` delegation, GTFOBins, shell escapes, security boundary collapse | `Completed` | [04-sudo-abuse.md](04-sudo-abuse.md) |
-| `05` | **SUID / SGID Binaries** | `High` | SUID bit mechanics, arbitrary file read primitives, offline cryptanalysis | `Completed` | [05-suid-binaries.md](05-suid-binaries.md) |
-| `06` | **POSIX Capabilities** | `High` | Capability splitting, `cap_setuid+ep`, embedded language execution engines | `Completed` | [06-capabilities.md](06-capabilities.md) |
-| `07` | **Cron Jobs** | `Medium` | Insecure DAC permissions, SUID root drops, relative path injection, John | `Completed` | [07-cron-jobs.md](07-cron-jobs.md) |
+| `01` | **Manual Enumeration** | `Info` | Environment triage, user mapping, network sockets, unquoted path analysis | `Completed` | [01-manual-enumeration.md](03-privilege-escalation/01-manual-enumeration.md) |
+| `02` | **Automated Reconnaissance** | `Info` | LinPEAS, LinEnum, session artifact inspection, false-positive elimination | `Completed` | [02-automated-recon.md](03-privilege-escalation/02-automated-recon.md) |
+| `03` | **Kernel Exploits** | `Critical` | CVE-2015-1328 (OverlayFS), dirty copy-on-write, kernel memory corruptions | `Completed` | [03-kernel-exploits-cve-2015-1328.md](03-privilege-escalation/03-kernel-exploits-cve-2015-1328.md) |
+| `04` | **Sudo Rights Abuse** | `High` | `NOPASSWD` delegation, GTFOBins, shell escapes, security boundary collapse | `Completed` | [04-sudo-abuse.md](03-privilege-escalation/04-sudo-abuse.md) |
+| `05` | **SUID / SGID Binaries** | `High` | SUID bit mechanics, arbitrary file read primitives, offline cryptanalysis | `Completed` | [05-suid-binaries.md](03-privilege-escalation/05-suid-binaries.md) |
+| `06` | **POSIX Capabilities** | `High` | Capability splitting, `cap_setuid+ep`, embedded language execution engines | `Completed` | [06-capabilities.md](03-privilege-escalation/06-capabilities.md) |
+| `07` | **Cron Jobs** | `Medium` | Insecure DAC permissions, SUID root drops, relative path injection, John | `Completed` | [07-cron-jobs.md](03-privilege-escalation/07-cron-jobs.md) |
 | `08` | **PATH Variable Abuse** | `Medium` | Binary hijacking, search order manipulation, custom executable compilation | `Pending` | `08-path-variable.md` |
 | `09` | **NFS Root Squashing** | `High` | `no_root_squash` exports, remote SUID payload injection, NFS mounting | `Pending` | `09-nfs-root-squash.md` |
 | `10` | **PrivEsc Capstone Challenge** | `High` | Multi-vector exploitation, defense-in-depth compromise, final flag harvesting | `Pending` | `10-capstone-challenge.md` |
