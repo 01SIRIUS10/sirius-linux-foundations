@@ -40,7 +40,7 @@ Detailed walk-throughs for different privilege escalation vectors.
 | 06 | Capabilities | `getcap -r /`, `cap_setuid+ep`, `vim` Breakout | ✅ Done | [Read →](./03-privilege-escalation/06-capabilities.md) |
 | 07 | Cron Jobs | Writable Scripts, SUID Bash Drop, `backup.sh` | ✅ Done | [Read →](./03-privilege-escalation/07-cron-jobs.md) |
 | 08 | PATH Variable | `$PATH` Hijacking, `system("thm")`, Unquoted Binaries | ✅ Done | [Read →](./03-privilege-escalation/08-path-variable.md) |
-| 09 | NFS Root Squashing | `no_root_squash`, Remote RPC Mount, SUID Injection | ✅ Done | [Read →](./03-privilege-escalation/09-nfs-root-squash.md) |
+| 09 | NFS Root Squashing | `no_root_squash`, Remote RPC Mount, SUID Injection | ✅ Done | [Read →](./03-privilege-escalation/09-nfs-root-squashing.md) |
 | 10 | Capstone Challenge | Comprehensive PrivEsc & Master Triage Runbook | ⬜ Up Next | — |
 
 ---
