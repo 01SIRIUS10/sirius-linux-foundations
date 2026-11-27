@@ -1,43 +1,81 @@
-<img src="https://raw.githubusercontent.com/01SIRIUS10/01SIRIUS10/main/Banner.png" width="100%" alt="SIRIUS Banner" />
+# Linux Privilege Escalation Master Runbook & Lab Portfolio
 
-# Linux Privilege Escalation — Production Lab Notes
-
-A methodical repository documenting enterprise-grade Linux privilege escalation attack vectors, internal mechanics, remediation blueprints, and root-cause analyses across standardized evaluation targets.
-
-> **Current Sprint Progress:** `8 / 10 labs completed`
+A systematic, production-grade security engineering repository documenting Linux Privilege Escalation attack vectors, internal OS security boundaries, architectural root causes, and hardening remediation.
 
 ---
 
-## 🧭 Privilege Escalation Vector Matrix
+## 🎯 Sprint Progress: 9 / 10 Labs Completed
 
-| # | Attack Vector | Severity | Core Mechanics & Primitives | Status | Lab Documentation |
-| :-: | :--- | :-: | :--- | :-: | :--- |
-| `01` | **Manual Enumeration** | `Info` | Environment triage, user mapping, network sockets, unquoted path analysis | `Completed` | [01-manual-enumeration.md](03-privilege-escalation/01-manual-enumeration.md) |
-| `02` | **Automated Reconnaissance** | `Info` | LinPEAS, LinEnum, session artifact inspection, false-positive elimination | `Completed` | [02-automated-recon.md](03-privilege-escalation/02-automated-recon.md) |
-| `03` | **Kernel Exploits** | `Critical` | CVE-2015-1328 (OverlayFS), dirty copy-on-write, kernel memory corruptions | `Completed` | [03-kernel-exploits-cve-2015-1328.md](03-privilege-escalation/03-kernel-exploits-cve-2015-1328.md) |
-| `04` | **Sudo Rights Abuse** | `High` | `NOPASSWD` delegation, GTFOBins, shell escapes, security boundary collapse | `Completed` | [04-sudo-abuse.md](03-privilege-escalation/04-sudo-abuse.md) |
-| `05` | **SUID / SGID Binaries** | `High` | SUID bit mechanics, arbitrary file read primitives, offline cryptanalysis | `Completed` | [05-suid-binaries.md](03-privilege-escalation/05-suid-binaries.md) |
-| `06` | **POSIX Capabilities** | `High` | Capability splitting, `cap_setuid+ep`, embedded language execution engines | `Completed` | [06-capabilities.md](03-privilege-escalation/06-capabilities.md) |
-| `07` | **Cron Jobs** | `Medium` | Insecure DAC permissions, SUID root drops, relative path injection, John | `Completed` | [07-cron-jobs.md](03-privilege-escalation/07-cron-jobs.md) |
-| `08` | **PATH Variable Abuse** | `Medium` | Binary hijacking, search order manipulation, custom executable compilation | `Completed` | [08-path-variable.md](03-privilege-escalation/08-path-variable.md) |
-| `09` | **NFS Root Squashing** | `High` | `no_root_squash` exports, remote SUID payload injection, NFS mounting | `Pending` | `09-nfs-root-squash.md` |
-| `10` | **PrivEsc Capstone Challenge** | `High` | Multi-vector exploitation, defense-in-depth compromise, final flag harvesting | `Pending` | `10-capstone-challenge.md` |
-
----
-
-## 🛠️ Methodological Triage Protocol
-
-1. **Phase 0: Session Stabilization:** Ensure full TTY interactive control (`python3 -c 'import pty; pty.spawn("/bin/bash")'`).
-2. **Phase 1: Identity & Context:** Interrogate effective UID, group memberships (`id`), kernel parameters (`uname -a`), and container indicators (`/proc/1/cgroup`).
-3. **Phase 2: Administrative Delegations:** Audit sudo permissions via `sudo -l`.
-4. **Phase 3: Privilege Anomalies:** Check filesystem SUIDs (`find / -perm -04000`) and POSIX capabilities (`getcap -r / 2>/dev/null`).
-5. **Phase 4: Scheduled Operations:** Parse system-wide crontabs (`/etc/crontab`, `/var/spool/cron/crontabs`).
-6. **Phase 5: Process & Internal Bindings:** Map listening local ports (`ss -tulnp`) and executing daemon identities (`ps aux`).
+| Lab # | Lab Writeup Document | Attack Vector / Focus Area | Target Binary / Artifact | Difficulty | Status |
+|:---:|---|---|---|:---:|:---:|
+| **01** | [01-manual-enumeration.md](01-manual-enumeration.md) | Manual Linux OS Reconnaissance | `procfs`, `/etc/passwd`, Network Sockets | Easy | Completed |
+| **02** | [02-automated-recon.md](02-automated-recon.md) | Automated Scripts & Tooling | `LinPeas`, `LinEnum`, `lse.sh` | Easy | Completed |
+| **03** | [03-kernel-exploits-cve-2015-1328.md](03-kernel-exploits-cve-2015-1328.md) | Kernel Vulnerability Exploitation | `overlayfs` (CVE-2015-1328) | Medium | Completed |
+| **04** | [04-sudo-abuse.md](04-sudo-abuse.md) | Sudo Rights & Token Abuse | `sudo find -exec`, Password Cracking | Easy | Completed |
+| **05** | [05-suid-binaries.md](05-suid-binaries.md) | SUID / SGID Bit Exploitation | `/usr/bin/base64`, `/etc/shadow` Read | Easy | Completed |
+| **06** | [06-capabilities.md](06-capabilities.md) | Linux POSIX Capabilities | `/home/karen/vim` (`cap_setuid+ep`) | Easy | Completed |
+| **07** | [07-cron-jobs.md](07-cron-jobs.md) | Cron Job Insecure File Overwrite | `/home/karen/backup.sh`, SUID Drop | Easy | Completed |
+| **08** | [08-path-variable.md](08-path-variable.md) | PATH Hijacking & Unquoted Binaries | `system("thm")`, `$PATH` Prepending | Easy | Completed |
+| **09** | [09-nfs-root-squash.md](09-nfs-root-squash.md) | Insecure NFS `no_root_squash` | Remote Mount, glibc SUID Injection | Medium | Completed |
+| **10** | [10-capstone-challenge.md](10-capstone-challenge.md) | Comprehensive Privilege Escalation | Full Triage Runbook (Phases 0–5) | Hard | Next Up |
 
 ---
 
-<p align="center">
-  <b>Nada (01SIRIUS10)</b> — CS Student · Aspiring Web App Pentester → AI Red Teamer<br>
-  <i>"It sounds serious, until you look up."</i><br>
-  <a href="https://www.linkedin.com/in/01sirius10">LinkedIn</a> • <a href="https://github.com/01SIRIUS10">GitHub</a>
-</p>
+## 🛠️ The 6-Phase Master Triage Runbook
+
+Every lab in this series adheres to the systematic triage methodology:
+
+```text
++---------------------------------------------------------------------------+
+|                  SYSTEMATIC PRIVILEGE ESCALATION RUNBOOK                  |
++---------------------------------------------------------------------------+
+| Phase 0: TTY Stabilization & Environmental Hygiene                        |
+|          python3 -c 'import pty;pty.spawn("/bin/bash")'                   |
+|                                                                           |
+| Phase 1: Identity & Execution Context                                     |
+|          id, groups, whoami, uname -a                                     |
+|                                                                           |
+| Phase 2: Administrative Delegation (Sudo)                                 |
+|          sudo -l -l                                                       |
+|                                                                           |
+| Phase 3: File Perms, SUID/SGID & POSIX Capabilities                       |
+|          find / -perm -u=s -type f 2>/dev/null                            |
+|          getcap -r / 2>/dev/null                                          |
+|                                                                           |
+| Phase 4: Scheduled Tasks & Network Storage Exports                        |
+|          cat /etc/crontab /etc/cron.*/, cat /etc/exports                  |
+|                                                                           |
+| Phase 5: Inter-Process Communication, Sockets & Credentials               |
+|          ss -tuln, ps aux, history, unshadow + john                       |
++---------------------------------------------------------------------------+
+```
+
+---
+
+## 📂 Repository Structure
+
+```text
+sirius-linux-foundations/
+└── 03-privilege-escalation/
+    ├── README.md
+    ├── 01-manual-enumeration.md
+    ├── 02-automated-recon.md
+    ├── 03-kernel-exploits-cve-2015-1328.md
+    ├── 04-sudo-abuse.md
+    ├── 05-suid-binaries.md
+    ├── 06-capabilities.md
+    ├── 07-cron-jobs.md
+    ├── 08-path-variable.md
+    ├── 09-nfs-root-squash.md
+    └── 10-capstone-challenge.md
+```
+
+---
+
+## 🛡️ Engineering & Hardening Principles
+
+1. **Principle of Least Privilege (PoLP):** Restrict sudo commands to exact arguments; never grant wildcards on interpreters or utilities supporting shell breakouts (`find`, `vim`, `less`).
+2. **Granular POSIX Capabilities:** Replace coarse-grained SUID binaries with fine-grained capabilities, auditing for elevated capabilities like `cap_setuid` that allow full credential synthesis.
+3. **Defensive Pathing:** Always invoke executables inside scripts and binaries using absolute, immutable paths (`/usr/bin/id` instead of `id`).
+4. **Secure Export Policies:** Never export NFS filesystems with `no_root_squash` to untrusted networks; enforce `nosuid` mount flags on all external media.
+5. **Deterministic Scheduling:** Lock down cron job scripts with strict ownership (`root:root`) and immutable permissions (`0700` or `0755`), preventing low-privilege script modification.
