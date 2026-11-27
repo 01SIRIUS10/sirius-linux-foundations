@@ -1,81 +1,69 @@
-# Linux Privilege Escalation Master Runbook & Lab Portfolio
+<div align="center">
+<img src="https://raw.githubusercontent.com/01SIRIUS10/01SIRIUS10/main/Banner.png" width="100%" alt="SIRIUS Banner" />
 
-A systematic, production-grade security engineering repository documenting Linux Privilege Escalation attack vectors, internal OS security boundaries, architectural root causes, and hardening remediation.
+# 🐧 sirius-linux-foundations
+### From zero to comfortable in the Linux shell — and from standard user to root.
+**It sounds serious, until you look up.**
 
----
+![Linux](https://img.shields.io/badge/Linux-Internals-1f2937?style=for-the-badge&logo=linux&labelColor=111827)
+![Bandit](https://img.shields.io/badge/Bandit-0%E2%86%9233_Done-1f2937?style=for-the-badge&logo=overthewire&labelColor=111827)
+![PrivEsc](https://img.shields.io/badge/Privilege-Escalation-1f2937?style=for-the-badge&logo=tryhackme&labelColor=111827)
+![Approach](https://img.shields.io/badge/Approach-Root_Cause_&_Remediation-1f2937?style=for-the-badge&logo=gitbook&labelColor=111827)
 
-## 🎯 Sprint Progress: 9 / 10 Labs Completed
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=From+Zero+to+Kernel+Exploitation;OverTheWire+Bandit+0+%E2%86%92+33;Building+a+Real+Red+Team+Mindset" alt="Typing SVG" />
+</div>
 
-| Lab # | Lab Writeup Document | Attack Vector / Focus Area | Target Binary / Artifact | Difficulty | Status |
-|:---:|---|---|---|:---:|:---:|
-| **01** | [01-manual-enumeration.md](01-manual-enumeration.md) | Manual Linux OS Reconnaissance | `procfs`, `/etc/passwd`, Network Sockets | Easy | Completed |
-| **02** | [02-automated-recon.md](02-automated-recon.md) | Automated Scripts & Tooling | `LinPeas`, `LinEnum`, `lse.sh` | Easy | Completed |
-| **03** | [03-kernel-exploits-cve-2015-1328.md](03-kernel-exploits-cve-2015-1328.md) | Kernel Vulnerability Exploitation | `overlayfs` (CVE-2015-1328) | Medium | Completed |
-| **04** | [04-sudo-abuse.md](04-sudo-abuse.md) | Sudo Rights & Token Abuse | `sudo find -exec`, Password Cracking | Easy | Completed |
-| **05** | [05-suid-binaries.md](05-suid-binaries.md) | SUID / SGID Bit Exploitation | `/usr/bin/base64`, `/etc/shadow` Read | Easy | Completed |
-| **06** | [06-capabilities.md](06-capabilities.md) | Linux POSIX Capabilities | `/home/karen/vim` (`cap_setuid+ep`) | Easy | Completed |
-| **07** | [07-cron-jobs.md](07-cron-jobs.md) | Cron Job Insecure File Overwrite | `/home/karen/backup.sh`, SUID Drop | Easy | Completed |
-| **08** | [08-path-variable.md](08-path-variable.md) | PATH Hijacking & Unquoted Binaries | `system("thm")`, `$PATH` Prepending | Easy | Completed |
-| **09** | [09-nfs-root-squash.md](09-nfs-root-squash.md) | Insecure NFS `no_root_squash` | Remote Mount, glibc SUID Injection | Medium | Completed |
-| **10** | [10-capstone-challenge.md](10-capstone-challenge.md) | Comprehensive Privilege Escalation | Full Triage Runbook (Phases 0–5) | Hard | Next Up |
+## 📖 About This Repo
+This is my personal documentation for mastering Linux. I started with the basics of the command line and moved into deep privilege escalation vectors. Every write-up here isn't just a list of commands—it's a breakdown of **why** a vulnerability exists and **how** to fix it.
 
----
+## 🛠️ Journey Structure
 
-## 🛠️ The 6-Phase Master Triage Runbook
-
-Every lab in this series adheres to the systematic triage methodology:
-
-```text
-+---------------------------------------------------------------------------+
-|                  SYSTEMATIC PRIVILEGE ESCALATION RUNBOOK                  |
-+---------------------------------------------------------------------------+
-| Phase 0: TTY Stabilization & Environmental Hygiene                        |
-|          python3 -c 'import pty;pty.spawn("/bin/bash")'                   |
-|                                                                           |
-| Phase 1: Identity & Execution Context                                     |
-|          id, groups, whoami, uname -a                                     |
-|                                                                           |
-| Phase 2: Administrative Delegation (Sudo)                                 |
-|          sudo -l -l                                                       |
-|                                                                           |
-| Phase 3: File Perms, SUID/SGID & POSIX Capabilities                       |
-|          find / -perm -u=s -type f 2>/dev/null                            |
-|          getcap -r / 2>/dev/null                                          |
-|                                                                           |
-| Phase 4: Scheduled Tasks & Network Storage Exports                        |
-|          cat /etc/crontab /etc/cron.*/, cat /etc/exports                  |
-|                                                                           |
-| Phase 5: Inter-Process Communication, Sockets & Credentials               |
-|          ss -tuln, ps aux, history, unshadow + john                       |
-+---------------------------------------------------------------------------+
-```
+| Phase | Topic | Focus | Status |
+| :--- | :--- | :--- | :--- |
+| **01** | Linux 101 | TCM Security & THM Pre-Security Path | ✅ Done |
+| **02** | Wargames | OverTheWire Bandit (Levels 0 → 33) | ✅ Done |
+| **03** | PrivEsc | THM Linux Privilege Escalation Path | 🔄 In Progress |
 
 ---
 
-## 📂 Repository Structure
+## 🚀 Privilege Escalation Labs
+Detailed walk-throughs for different privilege escalation vectors. 
+**Active sprint: 9 / 10 labs completed**
 
-```text
-sirius-linux-foundations/
-└── 03-privilege-escalation/
-    ├── README.md
-    ├── 01-manual-enumeration.md
-    ├── 02-automated-recon.md
-    ├── 03-kernel-exploits-cve-2015-1328.md
-    ├── 04-sudo-abuse.md
-    ├── 05-suid-binaries.md
-    ├── 06-capabilities.md
-    ├── 07-cron-jobs.md
-    ├── 08-path-variable.md
-    ├── 09-nfs-root-squash.md
-    └── 10-capstone-challenge.md
-```
+| # | Vector | Core Concept / Tools | Status | Documentation |
+|:--|:---|:---|:---|:---|
+| 01 | Manual Enumeration | `hostname`, `uname -a`, `id`, `ss -tulnp`, `procfs` | ✅ Done | [Read →](./03-privilege-escalation/01-manual-enumeration.md) |
+| 02 | Automated Recon | `LinPEAS`, `LinEnum`, `lse.sh` | ✅ Done | [Read →](./03-privilege-escalation/02-automated-recon.md) |
+| 03 | Kernel Exploits | `CVE-2015-1328` (`OverlayFS`, `gcc`, `ld.so.preload`) | ✅ Done | [Read →](./03-privilege-escalation/03-kernel-exploits-cve-2015-1328.md) |
+| 04 | Sudo Abuse | `sudo -l`, `find -exec`, Password Cracking | ✅ Done | [Read →](./03-privilege-escalation/04-sudo-abuse.md) |
+| 05 | SUID Binaries | `find / -perm -u=s`, `base64` Arbitrary Read | ✅ Done | [Read →](./03-privilege-escalation/05-suid-binaries.md) |
+| 06 | Capabilities | `getcap -r /`, `cap_setuid+ep`, `vim` Breakout | ✅ Done | [Read →](./03-privilege-escalation/06-capabilities.md) |
+| 07 | Cron Jobs | Writable Scripts, SUID Bash Drop, `backup.sh` | ✅ Done | [Read →](./03-privilege-escalation/07-cron-jobs.md) |
+| 08 | PATH Variable | `$PATH` Hijacking, `system("thm")`, Unquoted Binaries | ✅ Done | [Read →](./03-privilege-escalation/08-path-variable.md) |
+| 09 | NFS Root Squashing | `no_root_squash`, Remote RPC Mount, SUID Injection | ✅ Done | [Read →](./03-privilege-escalation/09-nfs-root-squash.md) |
+| 10 | Capstone Challenge | Comprehensive PrivEsc & Master Triage Runbook | ⬜ Up Next | — |
 
 ---
 
-## 🛡️ Engineering & Hardening Principles
+## 📝 Lab Documentation Standard
+Every lab write-up follows a strict structure to ensure deep understanding:
+1. **Goal:** What are we trying to achieve?
+2. **Concept:** How does the technology work normally?
+3. **Enumeration:** How did we find the vulnerability?
+4. **Exploitation:** Step-by-step commands and logic.
+5. **Root Cause:** Why was this possible at the code/OS level?
+6. **Remediation:** How would a professional fix this?
 
-1. **Principle of Least Privilege (PoLP):** Restrict sudo commands to exact arguments; never grant wildcards on interpreters or utilities supporting shell breakouts (`find`, `vim`, `less`).
-2. **Granular POSIX Capabilities:** Replace coarse-grained SUID binaries with fine-grained capabilities, auditing for elevated capabilities like `cap_setuid` that allow full credential synthesis.
-3. **Defensive Pathing:** Always invoke executables inside scripts and binaries using absolute, immutable paths (`/usr/bin/id` instead of `id`).
-4. **Secure Export Policies:** Never export NFS filesystems with `no_root_squash` to untrusted networks; enforce `nosuid` mount flags on all external media.
-5. **Deterministic Scheduling:** Lock down cron job scripts with strict ownership (`root:root`) and immutable permissions (`0700` or `0755`), preventing low-privilege script modification.
+## 📍 Where This Fits
+This repository is **Stop #2** in my cybersecurity journey.
+*   **Stop #1:** [SIRIUS-Net-Zero](https://github.com/01SIRIUS10/SIRIUS-Net-Zero) (Networking Basics)
+*   **Stop #2:** **sirius-linux-foundations** (Linux & PrivEsc) 📍
+*   **Stop #3:** [SIRIUS-Python-Journey](https://github.com/01SIRIUS10/SIRIUS-Python-Journey) (Security Tooling)
+
+---
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/Connect-01SIRIUS10-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/01sirius10)
+
+*Sirius is the brightest star in the night sky. Keep looking up.* ✨
+</div>
